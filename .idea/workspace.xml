@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="8b180653-e0c9-48a5-b9d1-aef0c46340e7" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1XLnXmg5tWMcuKaFI57T4qsQqDD" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="javascript.nodejs.core.library.configured.version" value="12.14.1" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="nodejs_interpreter_path" value="node" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="ts.external.directory.path" value="Z:\Projects\home-backend\node_modules\typescript\lib" />
+  </component>
+  <component name="RunManager" selected="npm.npm start">
+    <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
+      <method v="2" />
+    </configuration>
+    <configuration name="npm start" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8b180653-e0c9-48a5-b9d1-aef0c46340e7" name="Default Changelist" comment="" />
+      <created>1580834283677</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1580834283677</updated>
+      <workItem from="1580834286843" duration="3299000" />
+      <workItem from="1580837621333" duration="2615000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="2654" y="331" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1580836759473">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2654" y="331" key="#com.intellij.fileTypes.FileTypeChooser/62.0.1474.864/1920.0.1920.1080@1920.0.1920.1080" timestamp="1580836759473" />
+    <state x="2610" y="288" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1580835606149">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2610" y="288" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/62.0.1474.864/1920.0.1920.1080@1920.0.1920.1080" timestamp="1580835606149" />
+    <state x="2536" y="250" width="672" height="677" key="run.anything.popup" timestamp="1580835934431">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2536" y="250" width="672" height="677" key="run.anything.popup/62.0.1474.864/1920.0.1920.1080@1920.0.1920.1080" timestamp="1580835934431" />
+    <state x="2543" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1580836212211">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2543" y="235" width="672" height="678" key="search.everywhere.popup/62.0.1474.864/1920.0.1920.1080@1920.0.1920.1080" timestamp="1580836212211" />
+  </component>
+</project>
