@@ -1,5 +1,6 @@
 const path = require('path');
 const htmlWebpackPlugin = require('html-webpack-plugin');
+const copyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     entry: './src/index.tsx',
@@ -23,15 +24,18 @@ module.exports = {
         ],
     },
     resolve: {
-        extensions: ['.tsx', '.ts', '.js']
+        extensions: ['.tsx', '.ts', '.js'],
     },
     output: {
-        filename: 'bundle.js',
+        filename: 'static/bundle.js',
         path: path.resolve(__dirname, 'build'),
     },
     plugins: [
         new htmlWebpackPlugin({
-            template: './src/index.html'
+            template: './src/index.html',
         }),
+        new copyWebpackPlugin([
+            {from: 'static/**', to: '.'},
+        ]),
     ],
 };
