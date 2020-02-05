@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {AuthOnly, AuthOnlyOtherwise} from "../../context/AuthContext";
+import {AuthOnly, AuthOnlyOtherwise} from "../../contexts/AuthContext";
 
 const Admin: React.FC = () => (
     <div className="container main-container">

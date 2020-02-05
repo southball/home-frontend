@@ -2,9 +2,9 @@ import * as React from "react";
 import {Route} from "react-router";
 
 import Nav from '../Nav/Nav';
-import Home from '../../page/Home/Home';
-import Login from '../../page/Login/Login';
-import Admin from '../../page/Admin/Admin';
+import Home from '../../pages/Home/Home';
+import Login from '../../pages/Login/Login';
+import Admin from '../../pages/Admin/Admin';
 
 const App = () => (
     <>

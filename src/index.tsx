@@ -3,9 +3,9 @@ import * as ReactDOM from 'react-dom';
 
 import './style.scss';
 
-import Router from './router/Router';
+import Router from './routers/Router';
 import App from './components/App/App';
-import {AuthProvider} from "./context/AuthContext";
+import {AuthProvider} from "./contexts/AuthContext";
 
 ReactDOM.render(
     <AuthProvider defaultAuthData={{ token: 'test' }}>

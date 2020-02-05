@@ -1,28 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8b180653-e0c9-48a5-b9d1-aef0c46340e7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../home-backend/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../home-backend/src/api.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../home-backend/src/server.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Nav/Nav.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/context/AuthContext.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/page/Admin/Admin.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/page/Home/Home.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/page/Login/Login.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/router/Router.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../home-backend/.env" beforeDir="false" afterPath="$PROJECT_DIR$/../home-backend/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../home-backend/.env.sample" beforeDir="false" afterPath="$PROJECT_DIR$/../home-backend/.env.sample" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../home-backend/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../home-backend/src/index.html" afterDir="false" />
+    <list default="true" id="8b180653-e0c9-48a5-b9d1-aef0c46340e7" name="Default Changelist" comment="Add OAuth2 and database code">
+      <change afterPath="$PROJECT_DIR$/../home-backend/src/api/api.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../home-backend/src/api/auth.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../home-backend/src/models/user.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../home-backend/src/api.ts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../home-backend/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../home-backend/src/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../home-backend/src/server.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../home-backend/src/server.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../home-backend/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/../home-backend/tsconfig.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/App/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Nav/Nav.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Nav/Nav.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/context/AuthContext.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/contexts/AuthContext.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/style.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/Admin/Admin.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Admin/Admin.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/Home/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home/Home.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/Login/Login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Login/Login.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/router/Router.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/routers/Router.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,7 +26,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../home-backend" />
   </component>
   <component name="ProjectId" id="1XLnXmg5tWMcuKaFI57T4qsQqDD" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -52,11 +48,12 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.HTML" />
-    <property name="ts.external.directory.path" value="Z:\Projects\home-frontend\node_modules\typescript\lib" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.TypeScript" />
+    <property name="ts.external.directory.path" value="Z:\Projects\home-backend\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="Z:\Projects\home-backend\src\api" />
       <recent name="Z:\Projects\home-frontend\src\page" />
       <recent name="Z:\Projects\home-frontend\src\components\App" />
     </key>
@@ -88,12 +85,26 @@
       <updated>1580834283677</updated>
       <workItem from="1580834286843" duration="3299000" />
       <workItem from="1580837621333" duration="3989000" />
-      <workItem from="1580886820102" duration="7315000" />
+      <workItem from="1580886820102" duration="8852000" />
+      <workItem from="1580904697176" duration="5576000" />
     </task>
+    <task id="LOCAL-00001" summary="Add packages and configurations for OAuth2.">
+      <created>1580910959909</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1580910959909</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Add packages and configurations for OAuth2." />
+    <MESSAGE value="Add OAuth2 and database code" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add OAuth2 and database code" />
   </component>
   <component name="WindowStateProjectService">
     <state x="625" y="265" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1580893299256">
@@ -105,21 +116,27 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2610" y="288" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/62.0.1474.864/1920.0.1920.1080@1920.0.1920.1080" timestamp="1580835606149" />
+    <state x="2478" y="58" key="CommitChangelistDialog2" timestamp="1580911024951">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2478" y="58" key="CommitChangelistDialog2/62.0.1474.864/1920.0.1920.1080@1920.0.1920.1080" timestamp="1580911024951" />
     <state x="580" y="188" key="FileChooserDialogImpl" timestamp="1580888486784">
       <screen x="62" y="0" width="1474" height="864" />
     </state>
     <state x="580" y="188" key="FileChooserDialogImpl/62.0.1474.864/1920.0.1920.1080@62.0.1474.864" timestamp="1580888486784" />
-    <state x="308" y="76" key="SettingsEditor" timestamp="1580889121130">
+    <state x="2240" y="95" width="1343" height="713" key="SettingsEditor" timestamp="1580907329804">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2240" y="95" width="1343" height="713" key="SettingsEditor/62.0.1474.864/1920.0.1920.1080@1920.0.1920.1080" timestamp="1580907329804" />
+    <state x="308" y="76" key="SettingsEditor/62.0.1474.864/1920.0.1920.1080@62.0.1474.864" timestamp="1580889121130" />
+    <state x="2536" y="250" width="672" height="677" key="run.anything.popup" timestamp="1580905601235">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2536" y="250" width="672" height="677" key="run.anything.popup/62.0.1474.864/1920.0.1920.1080@1920.0.1920.1080" timestamp="1580905601235" />
+    <state x="540" y="188" width="516" height="543" key="search.everywhere.popup" timestamp="1580895196019">
       <screen x="62" y="0" width="1474" height="864" />
     </state>
-    <state x="308" y="76" key="SettingsEditor/62.0.1474.864/1920.0.1920.1080@62.0.1474.864" timestamp="1580889121130" />
-    <state x="2536" y="250" width="672" height="677" key="run.anything.popup" timestamp="1580835934431">
-      <screen x="1920" y="0" width="1920" height="1080" />
-    </state>
-    <state x="2536" y="250" width="672" height="677" key="run.anything.popup/62.0.1474.864/1920.0.1920.1080@1920.0.1920.1080" timestamp="1580835934431" />
-    <state x="2543" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1580836212211">
-      <screen x="1920" y="0" width="1920" height="1080" />
-    </state>
     <state x="2543" y="235" width="672" height="678" key="search.everywhere.popup/62.0.1474.864/1920.0.1920.1080@1920.0.1920.1080" timestamp="1580836212211" />
+    <state x="540" y="188" width="516" height="543" key="search.everywhere.popup/62.0.1474.864/1920.0.1920.1080@62.0.1474.864" timestamp="1580895196019" />
   </component>
 </project>

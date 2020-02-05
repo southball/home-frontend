@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {useState} from 'react';
 import {Link} from 'react-router-dom';
-import {AuthOnly} from "../../context/AuthContext";
+import {AuthOnly} from "../../contexts/AuthContext";
 
 interface NavbarBrandProps {
     toggle: () => void;
@@ -30,8 +30,10 @@ const NavbarItemLeft: React.FC = ({children}) => <>{children}</>;
 const NavbarItemRight: React.FC = ({children}) => <>{children}</>;
 
 const NavbarBody = ({toggled, children}: NavbarBodyProps) => {
-    const leftItems = React.Children.map(children, (child) => (child as any).type === NavbarItemLeft ? child : null);
-    const rightItems = React.Children.map(children, (child) => (child as any).type === NavbarItemRight ? child : null);
+    const leftItems = React.Children.map(children,
+        (child) => (child as any)?.type === NavbarItemLeft ? child : null);
+    const rightItems = React.Children.map(children,
+        (child) => (child as any)?.type === NavbarItemRight ? child : null);
 
     return (
         <div className={"navbar-menu" + (toggled ? " is-active" : "")}>
