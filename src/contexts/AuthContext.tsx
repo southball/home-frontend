@@ -1,10 +1,11 @@
 import * as React from 'react';
 import {useState} from "react";
 
-const AuthContext = React.createContext<AuthData>(null);
+const AuthContext = React.createContext<AuthData>({});
 
-interface AuthData {
+export interface AuthData {
     token?: string;
+    permissionLevel?: string;
 }
 
 interface AuthProviderProps {
@@ -30,9 +31,21 @@ interface AuthOnlyOtherwiseProps {
     children: React.ReactNode;
 }
 
-enum AuthLevel {
-    USER,
-    ADMIN
+export enum AuthLevel {
+    NONE = -1,
+    VISITOR = 0,
+    USER = 1,
+    ADMIN = 2
+}
+
+function toAuthLevel(permissionLevel?: string): AuthLevel {
+    if (permissionLevel === 'visitor')
+        return AuthLevel.VISITOR;
+    if (permissionLevel === 'user')
+        return AuthLevel.USER;
+    if (permissionLevel === 'admin')
+        return AuthLevel.ADMIN;
+    return AuthLevel.NONE;
 }
 
 export const AuthProvider = ({ defaultAuthData, children }: AuthProviderProps) => {
@@ -46,7 +59,7 @@ export const AuthProvider = ({ defaultAuthData, children }: AuthProviderProps) =
 
 export const AuthConsumer = ({ children }: AuthConsumerProps) => (
     <AuthContext.Consumer>
-        {(authData: AuthData) => (console.log(authData), children(authData))}
+        {(authData: AuthData) => children(authData)}
     </AuthContext.Consumer>
 );
 
@@ -56,11 +69,13 @@ export const AuthOnly = ({ children, level }: AuthOnlyProps) => {
     const noAuthDisplay = React.Children.map(children,
         (child) => (child as any)?.type === AuthOnlyOtherwise ? child : null);
 
+    const requiredLevel = typeof level !== 'undefined' ? level : AuthLevel.NONE;
+
     // TODO fix authentication level check
     return (
         <AuthConsumer>
             {(authData) => (
-                authData.token
+                authData.token && toAuthLevel(authData.permissionLevel) >= requiredLevel
                     ? authDisplay
                     : noAuthDisplay
             )}

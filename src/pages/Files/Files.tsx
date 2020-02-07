@@ -1,10 +1,10 @@
 import * as React from 'react';
 import {AuthLevel, AuthOnly, AuthOnlyOtherwise} from "../../contexts/AuthContext";
 
-const Admin: React.FC = () => (
+const Files = () => (
     <div className="container main-container">
-        <AuthOnly level={AuthLevel.ADMIN}>
-            <h1 className="title">Admin</h1>
+        <AuthOnly level={AuthLevel.USER}>
+            <h1 className="title">Files</h1>
 
             <AuthOnlyOtherwise>
                 You cannot view this page.
@@ -13,4 +13,4 @@ const Admin: React.FC = () => (
     </div>
 );
 
-export default Admin;
+export default Files;

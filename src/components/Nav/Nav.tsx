@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {useState} from 'react';
 import {Link} from 'react-router-dom';
-import {AuthOnly} from "../../contexts/AuthContext";
+import {AuthLevel, AuthOnly, AuthOnlyOtherwise} from "../../contexts/AuthContext";
 
 interface NavbarBrandProps {
     toggle: () => void;
@@ -14,9 +14,9 @@ interface NavbarBodyProps {
 
 const NavbarBrand = ({toggle}: NavbarBrandProps) => (
     <div className="navbar-brand">
-        <a className="nav-item" href="/" style={{height: "52px"}}>
+        <Link className="nav-item" to="/" style={{height: "52px"}}>
             <img src="/static/logo.png" style={{height: "52px", padding: "12px"}} />
-        </a>
+        </Link>
 
         <a className="navbar-burger burger" onClick={toggle}>
             <span />
@@ -51,18 +51,47 @@ const Nav = () => {
     const [toggled, setToggle] = useState(false);
     const toggle = () => setToggle(toggled => !toggled);
 
+    interface NavLinkProps {
+        className?: string;
+        children: React.ReactNode;
+        to: string;
+        onClick?: (event: React.MouseEvent<Link>) => void;
+
+        // Allow any other properties
+        [prop: string]: any;
+    }
+
+    const NavLink = ({className, children, to, onClick, ...props}: NavLinkProps) => {
+        const extendedOnClick = (event: React.MouseEvent<Link>) => {
+            setToggle(false);
+            onClick?.(event);
+        };
+        const additionalClassName = typeof className !== 'undefined' ? className : '';
+        return (
+            <Link className={`navbar-item ${additionalClassName}`} to={to} onClick={extendedOnClick as any} {...props}>{children}</Link>
+        );
+    };
+
     return (
         <nav className="navbar is-fixed-top" style={{boxShadow: "0 2px 0 0 #f5f5f5"}}>
             <NavbarBrand toggle={toggle} />
             <NavbarBody toggled={toggled}>
                 <NavbarItemLeft>
-                    <Link className="navbar-item" to="/">Home</Link>
-                    <AuthOnly>
-                        <Link className="navbar-item" to="/admin">Admin</Link>
+                    <NavLink to="/">Home</NavLink>
+                    <AuthOnly level={AuthLevel.USER}>
+                        <NavLink to="/files">Files</NavLink>
+                    </AuthOnly>
+                    <AuthOnly level={AuthLevel.ADMIN}>
+                        <NavLink to="/admin">Admin</NavLink>
                     </AuthOnly>
                 </NavbarItemLeft>
                 <NavbarItemRight>
-                    <Link className="navbar-item" to="/login">Login</Link>
+                    <AuthOnly>
+                        <NavLink to="/logout">Logout</NavLink>
+                        <AuthOnlyOtherwise>
+                            <NavLink to="/login">Login</NavLink>
+                        </AuthOnlyOtherwise>
+                    </AuthOnly>
                 </NavbarItemRight>
             </NavbarBody>
         </nav>
