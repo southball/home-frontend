@@ -3,6 +3,7 @@
     "jsx": "react",
     "target": "ES6",
     "noImplicitAny": true,
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "strictNullChecks": true
   }
 }
