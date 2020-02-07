@@ -1,0 +1,30 @@
+.file-manager {
+  .file-entry {
+    cursor: pointer;
+
+    .tag-display {
+      margin-left: auto;
+      opacity: 0.6;
+    }
+
+    .file-entry-ellipsis {
+      opacity: 0.2;
+    }
+
+    .file-entry-ellipsis:hover {
+      opacity: 1.0;
+    }
+  }
+
+  .breadcrumb {
+    li.folder a {
+      padding-left: 0.25em;
+      padding-right: 0.5em;
+    }
+
+    li.home a {
+      padding-left: 0;
+      padding-right: 0.25em;
+    }
+  }
+}

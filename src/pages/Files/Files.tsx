@@ -1,16 +1,23 @@
 import * as React from 'react';
-import {AuthLevel, AuthOnly, AuthOnlyOtherwise} from "../../contexts/AuthContext";
+import AuthContext, {AuthLevel, AuthOnly, AuthOnlyOtherwise} from "../../contexts/AuthContext";
+import FileManager from '../../components/FileManager/FileManager';
+import {useContext} from "react";
 
-const Files = () => (
-    <div className="container main-container">
-        <AuthOnly level={AuthLevel.USER}>
-            <h1 className="title">Files</h1>
+const Files = () => {
+    const authData = useContext(AuthContext);
 
-            <AuthOnlyOtherwise>
-                You cannot view this page.
-            </AuthOnlyOtherwise>
-        </AuthOnly>
-    </div>
-);
+    return (
+        <div className="container main-container">
+            <AuthOnly level={AuthLevel.USER}>
+                <h1 className="title">Files</h1>
+                <FileManager token={authData.token as string} />
+
+                <AuthOnlyOtherwise>
+                    You cannot view this page.
+                </AuthOnlyOtherwise>
+            </AuthOnly>
+        </div>
+    );
+};
 
 export default Files;

@@ -12,10 +12,12 @@
   "license": "ISC",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.12.1",
+    "axios": "^0.19.2",
     "bulma": "^0.8.0",
     "cookie": "^0.4.0",
     "css-loader": "^3.4.2",
     "js-cookie": "^2.2.1",
+    "mime": "^2.4.4",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-router": "^5.1.2",
@@ -25,6 +27,7 @@
   "devDependencies": {
     "@types/cookie": "^0.3.3",
     "@types/js-cookie": "^2.2.4",
+    "@types/mime": "^2.0.1",
     "@types/react": "^16.9.19",
     "@types/react-dom": "^16.9.5",
     "@types/react-router": "^5.1.4",
