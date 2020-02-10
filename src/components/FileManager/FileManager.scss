@@ -1,18 +1,49 @@
 .file-manager {
   .file-entry {
     cursor: pointer;
+    padding: 0.25em 0.75em;
 
     .tag-display {
       margin-left: auto;
       opacity: 0.6;
     }
 
-    .file-entry-ellipsis {
+    .file-entry-toggle {
       opacity: 0.2;
     }
 
-    .file-entry-ellipsis:hover {
+    .file-entry-toggle:hover {
       opacity: 1.0;
+    }
+  }
+
+  .tag-editor {
+    .tag-list {
+      .control:not(:last-child) {
+        margin-right: 0.25rem;
+      }
+    }
+
+    .tag-control {
+      @media screen and (max-width: 768px) {
+        .column:not(:first-child) {
+          padding-top: 0;
+        }
+
+        .column:not(:last-child) {
+          padding-bottom: 0;
+        }
+      }
+
+      @media screen and (min-width: 769px) {
+        .column:not(:first-child) {
+          padding-left: 0;
+        }
+
+        .column:not(:last-child) {
+          padding-right: 0;
+        }
+      }
     }
   }
 

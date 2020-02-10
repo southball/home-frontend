@@ -2,16 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8b180653-e0c9-48a5-b9d1-aef0c46340e7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/FileManager/FileManager.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/FileManager/FileManager.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../home-backend/src/models/file.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/AnnouncementManager/AnnouncementEditor.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/AnnouncementManager/AnnouncementManager.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/AnnouncementManager/AnnouncementManager.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/ErrorPanel/ErrorPanel.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/ErrorPanel/ErrorPanel.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Panel/Panel.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/SearchBox/SearchBox.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/SearchableList/SearchableList.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/UserManager/UserEditor.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/UserManager/UserManager.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/UserManager/UserManager.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utilities/nonNull.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../home-backend/src/api/api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../home-backend/src/api/api.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../home-backend/src/api/auth.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../home-backend/src/api/auth.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../home-backend/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../home-backend/src/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../home-backend/src/server.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../home-backend/src/server.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../home-backend/src/database.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../home-backend/src/database.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Files/Files.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Files/Files.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/FileManager/FileManager.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FileManager/FileManager.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/FileManager/FileManager.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FileManager/FileManager.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Admin/Admin.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Admin/Admin.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/style.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -20,7 +32,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../home-backend" />
   </component>
   <component name="ProjectId" id="1XLnXmg5tWMcuKaFI57T4qsQqDD" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -43,7 +55,7 @@
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.TypeScript" />
-    <property name="ts.external.directory.path" value="Z:\Projects\home-backend\node_modules\typescript\lib" />
+    <property name="ts.external.directory.path" value="Z:\Projects\home-frontend\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -83,7 +95,11 @@
       <workItem from="1580904697176" duration="5696000" />
       <workItem from="1581063609657" duration="6845000" />
       <workItem from="1581080993677" duration="46000" />
-      <workItem from="1581090190014" duration="8464000" />
+      <workItem from="1581090190014" duration="8841000" />
+      <workItem from="1581141305098" duration="14897000" />
+      <workItem from="1581183511905" duration="208000" />
+      <workItem from="1581233169202" duration="11487000" />
+      <workItem from="1581333306936" duration="7219000" />
     </task>
     <task id="LOCAL-00001" summary="Add packages and configurations for OAuth2.">
       <created>1580910959909</created>
@@ -134,7 +150,14 @@
       <option name="project" value="LOCAL" />
       <updated>1581070370258</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Add file manager feature">
+      <created>1581098780926</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1581098780926</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -148,22 +171,28 @@
     <MESSAGE value="Add database and authentication features" />
     <MESSAGE value="Add and improve authentication related features" />
     <MESSAGE value="Fix .gitignore to exclude database.sqlite" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix .gitignore to exclude database.sqlite" />
+    <MESSAGE value="Add file manager feature" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add file manager feature" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="625" y="265" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1580893299256">
+    <state x="2654" y="331" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1581245509693">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2654" y="331" key="#com.intellij.fileTypes.FileTypeChooser/62.0.1474.864/1920.0.1920.1080@1920.0.1920.1080" timestamp="1581245509693" />
+    <state x="625" y="265" key="#com.intellij.fileTypes.FileTypeChooser/62.0.1474.864/1920.0.1920.1080@62.0.1474.864" timestamp="1580893299256" />
+    <state x="281" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1581240662943">
       <screen x="62" y="0" width="1474" height="864" />
     </state>
-    <state x="2654" y="331" key="#com.intellij.fileTypes.FileTypeChooser/62.0.1474.864/1920.0.1920.1080@1920.0.1920.1080" timestamp="1580836759473" />
-    <state x="625" y="265" key="#com.intellij.fileTypes.FileTypeChooser/62.0.1474.864/1920.0.1920.1080@62.0.1474.864" timestamp="1580893299256" />
+    <state x="281" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/62.0.1474.864/1920.0.1920.1080@62.0.1474.864" timestamp="1581240662943" />
     <state x="2610" y="288" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1580835606149">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2610" y="288" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/62.0.1474.864/1920.0.1920.1080@1920.0.1920.1080" timestamp="1580835606149" />
-    <state x="2202" y="43" width="1185" height="982" key="CommitChangelistDialog2" timestamp="1581070368654">
-      <screen x="1920" y="0" width="1920" height="1080" />
+    <state x="278" y="34" width="1185" height="982" key="CommitChangelistDialog2" timestamp="1581345238760">
+      <screen x="62" y="0" width="1474" height="864" />
     </state>
-    <state x="2202" y="43" width="1185" height="982" key="CommitChangelistDialog2/62.0.1474.864/1920.0.1920.1080@1920.0.1920.1080" timestamp="1581070368654" />
+    <state x="2202" y="43" width="1185" height="982" key="CommitChangelistDialog2/62.0.1474.864/1920.0.1920.1080@1920.0.1920.1080" timestamp="1581098778793" />
+    <state x="278" y="34" key="CommitChangelistDialog2/62.0.1474.864/1920.0.1920.1080@62.0.1474.864" timestamp="1581345238760" />
     <state x="2283" y="183" key="DiffContextDialog" timestamp="1581070382691">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
@@ -181,18 +210,24 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state width="498" height="446" key="SwitcherDM/62.0.1474.864/1920.0.1920.1080@1920.0.1920.1080" timestamp="1581094769518" />
-    <state x="2472" y="270" key="Vcs.Push.Dialog.v2" timestamp="1581070384189">
+    <state x="2472" y="270" key="Vcs.Push.Dialog.v2" timestamp="1581098788597">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2472" y="270" key="Vcs.Push.Dialog.v2/62.0.1474.864/1920.0.1920.1080@1920.0.1920.1080" timestamp="1581070384189" />
-    <state x="2536" y="250" width="672" height="677" key="run.anything.popup" timestamp="1581095250410">
+    <state x="2472" y="270" key="Vcs.Push.Dialog.v2/62.0.1474.864/1920.0.1920.1080@1920.0.1920.1080" timestamp="1581098788597" />
+    <state x="509" y="49" width="759" height="766" key="find.popup" timestamp="1581336217031">
+      <screen x="62" y="0" width="1474" height="864" />
+    </state>
+    <state x="2502" y="61" width="755" height="957" key="find.popup/62.0.1474.864/1920.0.1920.1080@1920.0.1920.1080" timestamp="1581150254971" />
+    <state x="509" y="49" width="759" height="766" key="find.popup/62.0.1474.864/1920.0.1920.1080@62.0.1474.864" timestamp="1581336217031" />
+    <state x="535" y="200" width="516" height="542" key="run.anything.popup" timestamp="1581336335112">
+      <screen x="62" y="0" width="1474" height="864" />
+    </state>
+    <state x="2536" y="250" width="672" height="677" key="run.anything.popup/62.0.1474.864/1920.0.1920.1080@1920.0.1920.1080" timestamp="1581154839608" />
+    <state x="535" y="200" width="516" height="542" key="run.anything.popup/62.0.1474.864/1920.0.1920.1080@62.0.1474.864" timestamp="1581336335112" />
+    <state x="2543" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1581246310306">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2536" y="250" width="672" height="677" key="run.anything.popup/62.0.1474.864/1920.0.1920.1080@1920.0.1920.1080" timestamp="1581095250410" />
-    <state x="2543" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1581095423870">
-      <screen x="1920" y="0" width="1920" height="1080" />
-    </state>
-    <state x="2543" y="235" width="672" height="678" key="search.everywhere.popup/62.0.1474.864/1920.0.1920.1080@1920.0.1920.1080" timestamp="1581095423870" />
-    <state x="540" y="188" width="516" height="543" key="search.everywhere.popup/62.0.1474.864/1920.0.1920.1080@62.0.1474.864" timestamp="1580895196019" />
+    <state x="2543" y="235" width="672" height="678" key="search.everywhere.popup/62.0.1474.864/1920.0.1920.1080@1920.0.1920.1080" timestamp="1581246310306" />
+    <state x="540" y="188" width="672" height="543" key="search.everywhere.popup/62.0.1474.864/1920.0.1920.1080@62.0.1474.864" timestamp="1581239759148" />
   </component>
 </project>

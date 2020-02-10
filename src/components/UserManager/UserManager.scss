@@ -1,0 +1,12 @@
+.user-manager {
+  .user-entry {
+    cursor: pointer;
+  }
+
+  .user-editor {
+    .button-delete {
+      background-color: transparent;
+      float: right;
+    }
+  }
+}
