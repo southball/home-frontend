@@ -60,9 +60,18 @@ class UserManager extends React.Component<UserManagerProps, UserManagerState> {
 
         this.UserList = this.UserList.bind(this);
 
+        this.addUser = this.addUser.bind(this);
         this.selectUser = this.selectUser.bind(this);
         this.onUserUpdated = this.onUserUpdated.bind(this);
         this.onCancel = this.onCancel.bind(this);
+    }
+
+    public addUser() {
+        axios.post('/api/user/create', {}, {params: {token: this.props.token}})
+            .then((response) => {
+                const users = [...this.state.users, response.data.user as User];
+                this.setState({users});
+            });
     }
 
     public selectUser(user: User) {
@@ -73,9 +82,7 @@ class UserManager extends React.Component<UserManagerProps, UserManagerState> {
 
     public onSearchQueryChange: ChangeEventHandler<HTMLInputElement> = (event) => {
         const searchQuery = event.target.value;
-        this.setState({
-            searchQuery,
-        });
+        this.setState({searchQuery});
     };
 
     public UserList() {
@@ -83,6 +90,14 @@ class UserManager extends React.Component<UserManagerProps, UserManagerState> {
             <Panel title="Users List">
                 <PanelBlock>
                     <SearchBox onChange={this.onSearchQueryChange} value={this.state.searchQuery} />
+                </PanelBlock>
+                <PanelBlock>
+                    <button className="button is-primary" type="button" onClick={this.addUser}>
+                        <span className="icon">
+                            <i className="fas fa-user" />
+                        </span>
+                        <span>Add User</span>
+                    </button>
                 </PanelBlock>
                 <SearchableList list={this.state.users} query={this.state.searchQuery} fuseOptions={this.fuseOptions}>
                     {(user: User) => (
@@ -92,7 +107,7 @@ class UserManager extends React.Component<UserManagerProps, UserManagerState> {
                             </span>
                             <span style={{wordBreak: "break-all"}}>
                                 <span className="tag">#{user.id}</span>&nbsp;
-                                {user.displayName} ({user.email}) [{user.permissionLevel}]
+                                {user.displayName || '-'} ({user.email || 'no email'}) [{user.permissionLevel}]
                             </span>
                         </PanelBlock>
                     )}
@@ -105,6 +120,16 @@ class UserManager extends React.Component<UserManagerProps, UserManagerState> {
         const users = this.state.users
             .map((user) => user.id !== id ? user : newUser)
             .filter(nonNull);
+        const originalUser = this.state.users.filter((user) => user.id === id)?.[0];
+        if (originalUser) {
+            if (newUser === null) {
+                axios.post('/api/user/delete', originalUser, {params: {token: this.props.token}});
+            } else {
+                axios.post('/api/user/edit', newUser, {params: {token: this.props.token}});
+            }
+        } else {
+            console.error('Cannot find original user, so cannot report edit to server.');
+        }
         this.setState({
             users,
             selectedUser: undefined,

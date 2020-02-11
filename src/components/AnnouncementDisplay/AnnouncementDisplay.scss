@@ -1,0 +1,11 @@
+@import "../../../node_modules/bulma/bulma";
+
+.announcement-display {
+  .announcement {
+    @extend .content;
+
+    hr {
+      background-color: #dbdbdb;
+    }
+  }
+}

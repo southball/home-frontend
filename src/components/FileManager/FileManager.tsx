@@ -4,8 +4,8 @@ import * as Fuse from 'fuse.js';
 import axios from 'axios';
 
 import './FileManager.scss';
-import {useState} from "react";
-import {Panel, PanelBlock} from "../Panel/Panel";
+import {useState} from 'react';
+import {Panel, PanelBlock} from '../Panel/Panel';
 
 interface File {
     // ID for sorting
@@ -131,7 +131,7 @@ class FileManager extends React.Component<FileManagerProps, FileManagerState> {
             this.setPath([...this.state.path, file.filename]);
         } else {
             const path = this.state.path.length ? this.state.path.map(encodeURI).join('/') + '/' : '';
-            window.open('/api/file/' + path + encodeURI(file.filename) + "?token=" + this.props.token);
+            window.open('/api/file/' + path + encodeURI(file.filename) + '?token=' + this.props.token);
         }
     }
 

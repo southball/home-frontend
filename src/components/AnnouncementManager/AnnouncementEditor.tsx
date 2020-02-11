@@ -1,12 +1,12 @@
 import * as React from 'react';
 
 import {Announcement} from './AnnouncementManager';
-import {ChangeEvent, useEffect, useState} from "react";
+import {ChangeEvent, useEffect, useState} from 'react';
 
 import AceEditor from 'react-ace';
 
-import "ace-builds/src-noconflict/mode-markdown";
-import "ace-builds/src-noconflict/theme-github";
+import 'ace-builds/src-noconflict/mode-markdown';
+import 'ace-builds/src-noconflict/theme-github';
 
 interface AnnouncementEditorProps {
     announcement: Announcement;
@@ -88,7 +88,7 @@ class AnnouncementEditor extends React.Component<AnnouncementEditorProps, Announ
                     Announcement Edit
                 </p>
                 <div className="panel-block">
-                    <form style={{width: "100%"}}>
+                    <form style={{width: '100%'}}>
                         <div className="field is-horizontal">
                             <div className="field-label is-normal">
                                 <label className="label">ID</label>

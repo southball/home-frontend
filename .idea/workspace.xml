@@ -2,10 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8b180653-e0c9-48a5-b9d1-aef0c46340e7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../home-backend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../home-backend/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../home-backend/src/api/announcement.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../home-backend/src/api/api-error.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../home-backend/src/api/file.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../home-backend/src/api/user.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../home-backend/src/models/announcement.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/AnnouncementDisplay/AnnouncementDisplay.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/AnnouncementDisplay/AnnouncementDisplay.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../home-backend/.env" beforeDir="false" afterPath="$PROJECT_DIR$/../home-backend/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../home-backend/.env.sample" beforeDir="false" afterPath="$PROJECT_DIR$/../home-backend/.env.sample" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../home-backend/src/api/api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../home-backend/src/api/api.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../home-backend/src/api/auth.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../home-backend/src/api/auth.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../home-backend/src/database.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../home-backend/src/database.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../home-backend/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../home-backend/src/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../home-backend/src/server.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../home-backend/src/server.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AnnouncementManager/AnnouncementEditor.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AnnouncementManager/AnnouncementEditor.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AnnouncementManager/AnnouncementManager.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AnnouncementManager/AnnouncementManager.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/App/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/FileManager/FileManager.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FileManager/FileManager.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UserManager/UserManager.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UserManager/UserManager.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/contexts/AuthContext.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/contexts/AuthContext.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Home/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home/Home.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Logout/Logout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Logout/Logout.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,7 +34,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../home-backend" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1XLnXmg5tWMcuKaFI57T4qsQqDD" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -35,8 +56,9 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.TypeScript" />
-    <property name="ts.external.directory.path" value="Z:\Projects\home-frontend\node_modules\typescript\lib" />
+    <property name="ts.external.directory.path" value="Z:\Projects\home-backend\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -81,7 +103,9 @@
       <workItem from="1581183511905" duration="208000" />
       <workItem from="1581233169202" duration="11487000" />
       <workItem from="1581333306936" duration="8503000" />
-      <workItem from="1581398826617" duration="163000" />
+      <workItem from="1581398826617" duration="216000" />
+      <workItem from="1581400021665" duration="1237000" />
+      <workItem from="1581415407932" duration="8297000" />
     </task>
     <task id="LOCAL-00001" summary="Add packages and configurations for OAuth2.">
       <created>1580910959909</created>
@@ -153,7 +177,14 @@
       <option name="project" value="LOCAL" />
       <updated>1581345273484</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Add --production flag to npm run build">
+      <created>1581399011764</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1581399011764</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -169,7 +200,8 @@
     <MESSAGE value="Fix .gitignore to exclude database.sqlite" />
     <MESSAGE value="Add file manager feature" />
     <MESSAGE value="Refactor code and add file manager and announcements" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactor code and add file manager and announcements" />
+    <MESSAGE value="Add --production flag to npm run build" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add --production flag to npm run build" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2654" y="331" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1581245509693">
@@ -185,11 +217,15 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2610" y="288" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/62.0.1474.864/1920.0.1920.1080@1920.0.1920.1080" timestamp="1580835606149" />
-    <state x="278" y="0" width="1185" height="982" key="CommitChangelistDialog2" timestamp="1581345271348">
+    <state x="543" y="254" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1581423628439">
+      <screen x="62" y="0" width="1474" height="864" />
+    </state>
+    <state x="543" y="254" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/62.0.1474.864/1920.0.1920.1080@62.0.1474.864" timestamp="1581423628439" />
+    <state x="278" y="0" width="1185" height="982" key="CommitChangelistDialog2" timestamp="1581399010191">
       <screen x="62" y="0" width="1474" height="864" />
     </state>
     <state x="2202" y="43" width="1185" height="982" key="CommitChangelistDialog2/62.0.1474.864/1920.0.1920.1080@1920.0.1920.1080" timestamp="1581098778793" />
-    <state x="278" y="0" key="CommitChangelistDialog2/62.0.1474.864/1920.0.1920.1080@62.0.1474.864" timestamp="1581345271348" />
+    <state x="278" y="0" key="CommitChangelistDialog2/62.0.1474.864/1920.0.1920.1080@62.0.1474.864" timestamp="1581399010191" />
     <state x="2283" y="183" key="DiffContextDialog" timestamp="1581070382691">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
@@ -207,25 +243,25 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state width="498" height="446" key="SwitcherDM/62.0.1474.864/1920.0.1920.1080@1920.0.1920.1080" timestamp="1581094769518" />
-    <state x="486" y="216" key="Vcs.Push.Dialog.v2" timestamp="1581345279321">
+    <state x="486" y="216" key="Vcs.Push.Dialog.v2" timestamp="1581399014379">
       <screen x="62" y="0" width="1474" height="864" />
     </state>
     <state x="2472" y="270" key="Vcs.Push.Dialog.v2/62.0.1474.864/1920.0.1920.1080@1920.0.1920.1080" timestamp="1581098788597" />
-    <state x="486" y="216" key="Vcs.Push.Dialog.v2/62.0.1474.864/1920.0.1920.1080@62.0.1474.864" timestamp="1581345279321" />
-    <state x="509" y="49" width="759" height="766" key="find.popup" timestamp="1581336217031">
+    <state x="486" y="216" key="Vcs.Push.Dialog.v2/62.0.1474.864/1920.0.1920.1080@62.0.1474.864" timestamp="1581399014379" />
+    <state x="509" y="49" width="759" height="766" key="find.popup" timestamp="1581423648453">
       <screen x="62" y="0" width="1474" height="864" />
     </state>
     <state x="2502" y="61" width="755" height="957" key="find.popup/62.0.1474.864/1920.0.1920.1080@1920.0.1920.1080" timestamp="1581150254971" />
-    <state x="509" y="49" width="759" height="766" key="find.popup/62.0.1474.864/1920.0.1920.1080@62.0.1474.864" timestamp="1581336217031" />
-    <state x="535" y="200" width="516" height="542" key="run.anything.popup" timestamp="1581336335112">
+    <state x="509" y="49" width="759" height="766" key="find.popup/62.0.1474.864/1920.0.1920.1080@62.0.1474.864" timestamp="1581423648453" />
+    <state x="535" y="200" width="516" height="542" key="run.anything.popup" timestamp="1581418094537">
       <screen x="62" y="0" width="1474" height="864" />
     </state>
     <state x="2536" y="250" width="672" height="677" key="run.anything.popup/62.0.1474.864/1920.0.1920.1080@1920.0.1920.1080" timestamp="1581154839608" />
-    <state x="535" y="200" width="516" height="542" key="run.anything.popup/62.0.1474.864/1920.0.1920.1080@62.0.1474.864" timestamp="1581336335112" />
-    <state x="2543" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1581246310306">
-      <screen x="1920" y="0" width="1920" height="1080" />
+    <state x="535" y="200" width="516" height="542" key="run.anything.popup/62.0.1474.864/1920.0.1920.1080@62.0.1474.864" timestamp="1581418094537" />
+    <state x="540" y="188" width="672" height="543" key="search.everywhere.popup" timestamp="1581419489384">
+      <screen x="62" y="0" width="1474" height="864" />
     </state>
     <state x="2543" y="235" width="672" height="678" key="search.everywhere.popup/62.0.1474.864/1920.0.1920.1080@1920.0.1920.1080" timestamp="1581246310306" />
-    <state x="540" y="188" width="672" height="543" key="search.everywhere.popup/62.0.1474.864/1920.0.1920.1080@62.0.1474.864" timestamp="1581239759148" />
+    <state x="540" y="188" width="672" height="543" key="search.everywhere.popup/62.0.1474.864/1920.0.1920.1080@62.0.1474.864" timestamp="1581419489384" />
   </component>
 </project>

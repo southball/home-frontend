@@ -1,14 +1,14 @@
 import * as React from 'react';
-import {Panel, PanelBlock} from "../Panel/Panel";
-import ErrorPanel from "../ErrorPanel/ErrorPanel";
-import AnnouncementEditor from "../AnnouncementManager/AnnouncementEditor";
-import {ChangeEventHandler} from "react";
-import * as Fuse from "fuse.js";
-import nonNull from "../../utilities/nonNull";
+import {Panel, PanelBlock} from '../Panel/Panel';
+import axios from 'axios';
+import AnnouncementEditor from '../AnnouncementManager/AnnouncementEditor';
+import {ChangeEventHandler} from 'react';
+import * as Fuse from 'fuse.js';
+import nonNull from '../../utilities/nonNull';
 
-import "./AnnouncementManager.scss";
-import SearchableList from "../SearchableList/SearchableList";
-import SearchBox from "../SearchBox/SearchBox";
+import './AnnouncementManager.scss';
+import SearchableList from '../SearchableList/SearchableList';
+import SearchBox from '../SearchBox/SearchBox';
 
 export interface Announcement {
     id: number;
@@ -50,25 +50,23 @@ class AnnouncementManager extends React.Component<AnnouncementManagerProps, Anno
     public constructor(props: any) {
         super(props);
 
-        const demoAnnouncement: Announcement = {
-            id: 1,
-            title: 'First Announcement',
-            priority: 0,
-            content: 'Nice announcement',
-        };
-
-        const demoAnnouncement2: Announcement = {
-            id: 2,
-            title: 'Second Announcement',
-            priority: 5,
-            content: 'Nice second announcement',
-        };
-
         this.state = {
-            announcements: [demoAnnouncement2, demoAnnouncement],
+            announcements: [],
             selectedAnnouncement: undefined,
             searchQuery: '',
         };
+
+        axios
+            .get('/api/announcements', {
+                params: {
+                    token: this.props.token,
+                },
+            })
+            .then((response) => {
+                const announcements = (response.data.announcements as Announcement[])
+                    .sort(AnnouncementManager.announcementComparator);
+                this.setState({announcements});
+            });
 
         this.AnnouncementList = this.AnnouncementList.bind(this);
 
@@ -82,15 +80,16 @@ class AnnouncementManager extends React.Component<AnnouncementManagerProps, Anno
     }
 
     public addAnnouncement() {
-        const announcements = [...this.state.announcements, {
-            id: Math.max(...this.state.announcements.map((a) => a.id)) + 1,
-            title: '',
-            content: '',
-            priority: 0,
-        }] as Announcement[];
-        this.setState({
-            announcements
-        });
+        axios
+            .post('/api/announcement/create', {}, {
+                params: {
+                    token: this.props.token,
+                },
+            })
+            .then((response) => {
+                const announcements = [...this.state.announcements, response.data.announcement as Announcement];
+                this.setState({announcements});
+            });
     }
 
     public AnnouncementList() {
@@ -104,10 +103,7 @@ class AnnouncementManager extends React.Component<AnnouncementManagerProps, Anno
                         <span>Add Announcement</span>
                     </button>
                 </PanelBlock>
-                <SearchableList
-                    list={this.state.announcements}
-                    query={this.state.searchQuery}
-                    fuseOptions={this.fuseOptions}>
+                <SearchableList list={this.state.announcements} query={this.state.searchQuery} fuseOptions={this.fuseOptions}>
                     {(announcement: Announcement) => (
                         <PanelBlock key={announcement.id} className="announcement-entry" onClick={() => this.selectAnnouncement(announcement)}>
                             <span className="panel-icon">
@@ -134,7 +130,6 @@ class AnnouncementManager extends React.Component<AnnouncementManagerProps, Anno
         if (!query.length) return announcements;
 
         const result = new Fuse(announcements, this.fuseOptions).search(query) as Announcement[];
-        console.log('Search result:',result);
         return result;
     }
 
@@ -149,6 +144,20 @@ class AnnouncementManager extends React.Component<AnnouncementManagerProps, Anno
             .map((announcement) => announcement.id !== id ? announcement : newAnnouncement)
             .filter(nonNull)
             .sort(AnnouncementManager.announcementComparator);
+
+        const originalAnnouncement = this.state.announcements
+            .filter((announcement) => announcement.id === id)?.[0];
+
+        if (originalAnnouncement) {
+            if (newAnnouncement === null) {
+                axios.post('/api/announcement/delete', originalAnnouncement, {params: {token: this.props.token}});
+            } else {
+                axios.post('/api/announcement/delete', newAnnouncement, {params: {token: this.props.token}});
+            }
+        } else {
+            console.error('Original announcement not found. Cannot update to server.');
+        }
+
         this.setState({
             announcements,
             selectedAnnouncement: undefined,

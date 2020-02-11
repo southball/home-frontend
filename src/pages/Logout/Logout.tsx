@@ -7,7 +7,7 @@ function Logout() {
     const logout = () => {
         localStorage.removeItem('session-token');
         localStorage.removeItem('session-permissionLevel');
-        history.push("/");
+        history.push('/');
         document.location.reload();
     };
 

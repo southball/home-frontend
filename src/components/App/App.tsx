@@ -1,5 +1,5 @@
-import * as React from "react";
-import {Route} from "react-router";
+import * as React from 'react';
+import {Route} from 'react-router';
 
 import Nav from '../Nav/Nav';
 import Home from '../../pages/Home/Home';
