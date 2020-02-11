@@ -152,7 +152,7 @@ class AnnouncementManager extends React.Component<AnnouncementManagerProps, Anno
             if (newAnnouncement === null) {
                 axios.post('/api/announcement/delete', originalAnnouncement, {params: {token: this.props.token}});
             } else {
-                axios.post('/api/announcement/delete', newAnnouncement, {params: {token: this.props.token}});
+                axios.post('/api/announcement/edit', newAnnouncement, {params: {token: this.props.token}});
             }
         } else {
             console.error('Original announcement not found. Cannot update to server.');
