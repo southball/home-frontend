@@ -8,9 +8,6 @@
       <change afterPath="$PROJECT_DIR$/../home-docker/.idea/modules.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../home-docker/Dockerfile" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../home-docker/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/home-frontend.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/home-frontend.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/AnnouncementDisplay/AnnouncementDisplay.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AnnouncementDisplay/AnnouncementDisplay.tsx" afterDir="false" />
     </list>
@@ -93,7 +90,7 @@
       <workItem from="1581398826617" duration="216000" />
       <workItem from="1581400021665" duration="1237000" />
       <workItem from="1581415407932" duration="10298000" />
-      <workItem from="1581457443105" duration="1380000" />
+      <workItem from="1581457443105" duration="2452000" />
     </task>
     <task id="LOCAL-00001" summary="Add packages and configurations for OAuth2.">
       <created>1580910959909</created>
@@ -179,7 +176,14 @@
       <option name="project" value="LOCAL" />
       <updated>1581425611973</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Fix announcement API call bug">
+      <created>1581458851950</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1581458851950</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -197,7 +201,8 @@
     <MESSAGE value="Refactor code and add file manager and announcements" />
     <MESSAGE value="Add --production flag to npm run build" />
     <MESSAGE value="Format code and fix user and announcement backend" />
-    <option name="LAST_COMMIT_MESSAGE" value="Format code and fix user and announcement backend" />
+    <MESSAGE value="Fix announcement API call bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix announcement API call bug" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2654" y="331" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1581245509693">
@@ -217,11 +222,12 @@
       <screen x="62" y="0" width="1474" height="864" />
     </state>
     <state x="543" y="254" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/62.0.1474.864/1920.0.1920.1080@62.0.1474.864" timestamp="1581423628439" />
-    <state x="278" y="0" width="1185" height="982" key="CommitChangelistDialog2" timestamp="1581425609792">
+    <state x="278" y="0" width="1185" height="864" key="CommitChangelistDialog2" timestamp="1581458850259">
       <screen x="62" y="0" width="1474" height="864" />
     </state>
     <state x="2202" y="43" width="1185" height="982" key="CommitChangelistDialog2/62.0.1474.864/1920.0.1920.1080@1920.0.1920.1080" timestamp="1581098778793" />
     <state x="278" y="0" key="CommitChangelistDialog2/62.0.1474.864/1920.0.1920.1080@62.0.1474.864" timestamp="1581425609792" />
+    <state x="278" y="0" width="1185" height="864" key="CommitChangelistDialog2/62.0.1474.864@62.0.1474.864" timestamp="1581458850259" />
     <state x="2283" y="183" key="DiffContextDialog" timestamp="1581070382691">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
@@ -240,11 +246,12 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state width="498" height="446" key="SwitcherDM/62.0.1474.864/1920.0.1920.1080@1920.0.1920.1080" timestamp="1581094769518" />
-    <state x="486" y="216" key="Vcs.Push.Dialog.v2" timestamp="1581425688662">
+    <state x="486" y="216" key="Vcs.Push.Dialog.v2" timestamp="1581458854160">
       <screen x="62" y="0" width="1474" height="864" />
     </state>
     <state x="2472" y="270" key="Vcs.Push.Dialog.v2/62.0.1474.864/1920.0.1920.1080@1920.0.1920.1080" timestamp="1581098788597" />
     <state x="486" y="216" key="Vcs.Push.Dialog.v2/62.0.1474.864/1920.0.1920.1080@62.0.1474.864" timestamp="1581425688662" />
+    <state x="486" y="216" key="Vcs.Push.Dialog.v2/62.0.1474.864@62.0.1474.864" timestamp="1581458854160" />
     <state x="509" y="49" width="759" height="766" key="find.popup" timestamp="1581423648453">
       <screen x="62" y="0" width="1474" height="864" />
     </state>
