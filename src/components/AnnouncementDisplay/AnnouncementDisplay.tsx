@@ -38,22 +38,20 @@ const AnnouncementPanel: React.FC<{announcement: AnnouncementWithHTML}> = ({anno
 const AnnouncementDisplay: React.FC = () => {
     const [announcements, setAnnouncements] = useState<AnnouncementWithHTML[]>([]);
 
-    useEffect(() => {
-        axios
-            .get('/api/announcements')
-            .then((response) => {
-                const announcements = (response.data.announcements as Announcement[])
-                    .sort(AnnouncementManager.announcementComparator)
-                    .map((announcement: Announcement) => ({
-                        ...announcement,
-                        compiledHTML: marked(announcement.content, {
-                            gfm: true,
-                            silent: true,
-                        }),
-                    }));
-                setAnnouncements(announcements);
-            });
-    });
+    axios
+        .get('/api/announcements')
+        .then((response) => {
+            const announcements = (response.data.announcements as Announcement[])
+                .sort(AnnouncementManager.announcementComparator)
+                .map((announcement: Announcement) => ({
+                    ...announcement,
+                    compiledHTML: marked(announcement.content, {
+                        gfm: true,
+                        silent: true,
+                    }),
+                }));
+            setAnnouncements(announcements);
+        });
 
     return (
         <div className="announcement-display">
