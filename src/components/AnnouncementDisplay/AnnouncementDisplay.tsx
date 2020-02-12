@@ -3,9 +3,11 @@ import {useEffect, useState} from 'react';
 import * as marked from 'marked';
 import axios from 'axios';
 
-import AnnouncementManager, {Announcement} from '../AnnouncementManager/AnnouncementManager';
+import AnnouncementManager from '../AnnouncementManager/AnnouncementManager';
 
 import './AnnouncementDisplay.scss';
+import {Announcement} from "../../class/Announcement";
+import {AnnouncementComparator} from "../../utilities/Comparator";
 
 interface AnnouncementWithHTML extends Announcement {
     compiledHTML: string;
@@ -44,7 +46,7 @@ const AnnouncementDisplay: React.FC = () => {
             .get('/api/announcements')
             .then((response) => {
                 const announcements = (response.data.announcements as Announcement[])
-                    .sort(AnnouncementManager.announcementComparator)
+                    .sort(AnnouncementComparator)
                     .map((announcement: Announcement) => ({
                         ...announcement,
                         compiledHTML: marked(announcement.content, {

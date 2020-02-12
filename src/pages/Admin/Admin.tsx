@@ -9,8 +9,6 @@ const Admin: React.FC = () => {
     const authData = useContext(AuthContext);
     const history = useHistory();
 
-    console.log(history);
-
     const TabLink = ({to, children}: {to: string, children: React.ReactNode}) => (
         <li className={history.location.pathname.startsWith(to) ? "is-active" : ""}>
             <Link to={to}>{children}</Link>
