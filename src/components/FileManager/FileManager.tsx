@@ -356,7 +356,7 @@ class FileManager extends React.Component<FileManagerProps, FileManagerState> {
                         : <this.FileListing />
                 }
             </Panel>
-        )
+        );
     }
 }
 

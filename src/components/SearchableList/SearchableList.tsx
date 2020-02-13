@@ -53,7 +53,7 @@ class SearchableList<T> extends React.Component<SearchableListProps<T>, Searchab
     public render() {
         return (
             <>
-                {this.state.filteredList.map(this.props.children)}
+                {this.state.filteredList.slice(0, 10).map(this.props.children)}
             </>
         )
     }
