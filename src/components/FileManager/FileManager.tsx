@@ -152,7 +152,7 @@ class FileManager extends React.Component<FileManagerProps, FileManagerState> {
                         </li>
                         {
                             this.state.path.map((component, id) => (
-                                <li className="folder">
+                                <li className="folder" key={id}>
                                     <a onClick={() => this.slicePath(id + 1)}>
                                         <span className="icon is-small"><i className="fas fa-folder" /></span>
                                         {component}
