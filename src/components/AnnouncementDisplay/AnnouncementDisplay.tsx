@@ -3,8 +3,6 @@ import {useEffect, useState} from 'react';
 import * as marked from 'marked';
 import axios from 'axios';
 
-import AnnouncementManager from '../AnnouncementManager/AnnouncementManager';
-
 import './AnnouncementDisplay.scss';
 import {Announcement} from "../../class/Announcement";
 import {AnnouncementComparator} from "../../utilities/Comparator";
@@ -61,7 +59,7 @@ const AnnouncementDisplay: React.FC = () => {
     return (
         <div className="announcement-display">
             {!announcements.length && <p>There are no announcements.</p>}
-            {announcements.map((announcement) => <AnnouncementPanel announcement={announcement} />)}
+            {announcements.map((announcement) => <AnnouncementPanel key={announcement.id} announcement={announcement} />)}
         </div>
     );
 };

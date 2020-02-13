@@ -27,7 +27,7 @@ module.exports = {
         extensions: ['.tsx', '.ts', '.js'],
     },
     output: {
-        filename: 'static/bundle.js',
+        filename: 'bundle.js',
         path: path.resolve(__dirname, 'build'),
     },
     plugins: [
