@@ -20,7 +20,7 @@ const AnnouncementFuseOptions: Fuse.FuseOptions<Announcement> = {
 };
 
 const AnnouncementManager: Manager<Announcement, ManagerProps<Announcement>> = (props) => {
-    const [entries, provider] = useProvider<Announcement>(AnnouncementProvider, props.token);
+    const [entries, controller] = useProvider<Announcement>(AnnouncementProvider, props.token);
     const [selected, setSelected] = useState<Announcement | null>(null);
     const [searchQuery, setSearchQuery] = useState<string>('');
 
@@ -35,7 +35,7 @@ const AnnouncementManager: Manager<Announcement, ManagerProps<Announcement>> = (
                             onChange={(event) => setSearchQuery(event.target.value)} />
                     </PanelBlock>
                     <PanelBlock>
-                        <button className="button is-primary" type="button" onClick={() => provider.createEntry()}>
+                        <button className="button is-primary" type="button" onClick={() => controller.create()}>
                             <span>Add Announcement</span>
                         </button>
                     </PanelBlock>
@@ -65,8 +65,7 @@ const AnnouncementManager: Manager<Announcement, ManagerProps<Announcement>> = (
                 <AnnouncementEditor
                     token={props.token}
                     selected={selected}
-                    onEdit={(announcement) => (provider.editEntry(announcement), setSelected(null))}
-                    onDelete={(announcement) => (provider.deleteEntry(announcement), setSelected(null))}
+                    controller={controller}
                     onCancel={() => setSelected(null)} />
             }
         </div>

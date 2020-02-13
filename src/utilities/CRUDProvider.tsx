@@ -1,68 +1,70 @@
 import {useEffect, useState} from "react";
 
-interface TypeWithID {
+export interface TypeWithID {
     id: number;
 }
 
+type Setter<T> = (t: T) => any;
+
 export abstract class CRUDProvider<T extends TypeWithID> {
-    public inited: boolean = false;
-    public abstract collection: T[];
-    public token?: string;
-    public hook?: (collection: T[]) => any;
-    public comparator?: (t1: T, t2: T) => number;
+    protected comparator?: (t1: T, t2: T) => number;
 
-    protected abstract getInitialCollection(): Promise<T[]>;
-    protected abstract serverCreateEntry(): Promise<T>;
-    protected abstract serverEditEntry(entry: T): Promise<T>;
-    protected abstract serverDeleteEntry(entry: T): Promise<void>;
+    public abstract getInitialCollection(token?: string): Promise<T[]>;
 
-    public constructor(token?: string) {
-        this.token = token;
-    }
-
-    protected setCollection(collection: T[]) {
-        this.collection = collection;
-        this.hook?.(collection);
-    }
-
-    public init(): void {
-        if (!this.inited) {
-            this.inited = true;
-            this.getInitialCollection()
-                .then(this.setCollection.bind(this));
-        }
-    }
+    protected abstract serverCreateEntry(token?: string): Promise<T>;
+    protected abstract serverEditEntry(entry: T, token?: string): Promise<T>;
+    protected abstract serverDeleteEntry(entry: T, token?: string): Promise<void>;
 
     public trySort(collection: T[]): T[] {
         return this.comparator ? collection.sort(this.comparator) : collection;
     }
 
-    public async createEntry(): Promise<void> {
-        const entry = await this.serverCreateEntry();
-        this.setCollection(this.trySort([...this.collection, entry]));
+    public async createEntry(collection: T[], setCollection: Setter<T[]>, token?: string): Promise<void> {
+        const entry = await this.serverCreateEntry(token);
+        setCollection(this.trySort([...collection, entry]));
     }
 
-    public async editEntry(entry: T): Promise<void> {
-        this.setCollection(this.trySort(this.collection.map((t: T) => t.id !== entry.id ? t : entry)));
-        await this.serverEditEntry(entry);
+    public async editEntry(collection: T[], setCollection: Setter<T[]>, entry: T, token?: string): Promise<void> {
+        setCollection(this.trySort(collection.map((t: T) => t.id !== entry.id ? t : entry)));
+        await this.serverEditEntry(entry, token);
     }
 
-    public async deleteEntry(entry: T): Promise<void> {
-        this.setCollection(this.trySort(this.collection.filter((t: T) => t.id !== entry.id)));
-        await this.serverDeleteEntry(entry);
+    public async deleteEntry(collection: T[], setCollection: Setter<T[]>, entry: T, token?: string): Promise<void> {
+        setCollection(this.trySort(collection.filter((t: T) => t.id !== entry.id)));
+        await this.serverDeleteEntry(entry, token);
     }
 }
 
-export function useProvider<T extends TypeWithID>(Provider: new (token?: string) => CRUDProvider<T>, token?: string): [T[], CRUDProvider<T>] {
-    const [provider] = useState<CRUDProvider<T>>(new Provider(token));
-    const [collection, setCollection] = useState<T[]>(provider.collection);
+export interface ProviderController<T extends TypeWithID> {
+    create: () => Promise<void>;
+    edit: (entry: T) => Promise<void>;
+    delete: (entry: T) => Promise<void>;
+}
 
-    if (!provider.inited) {
-        provider.hook = (collection) => {
-            setCollection(collection);
-        };
-        provider.init();
+export function useProvider<T extends TypeWithID>(Provider: new (token?: string) => CRUDProvider<T>, token?: string): [T[], ProviderController<T>] {
+    const [collection, setCollection] = useState<T[]>([]);
+    const [inited, setInited] = useState<boolean>(false);
+
+    if (!inited) {
+        setInited(true);
+        new Provider()
+            .getInitialCollection(token)
+            .then((collection) => {
+                setCollection(collection);
+            });
     }
 
-    return [collection, provider];
+    const controller: ProviderController<T> = {
+        async create() {
+            new Provider().createEntry(collection, setCollection, token);
+        },
+        async edit(entry) {
+            new Provider().editEntry(collection, setCollection, entry, token);
+        },
+        async delete(entry) {
+            new Provider().deleteEntry(collection, setCollection, entry, token);
+        }
+    };
+
+    return [collection, controller];
 }

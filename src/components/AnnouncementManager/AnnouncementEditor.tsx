@@ -9,8 +9,8 @@ import {Editor, EditorProps} from "../../utilities/Editor";
 import {Announcement} from "../../class/Announcement";
 import RangeArray from "../../utilities/Range";
 
-const AnnouncementEditor: Editor<Announcement, EditorProps<Announcement>> = (props) => {
-    const [announcement, announcementUpdate] = useState(props.selected);
+const AnnouncementEditor: Editor<Announcement, EditorProps<Announcement>> = ({controller, onCancel, selected, ...props}) => {
+    const [announcement, announcementUpdate] = useState(selected);
 
     return (
         <nav className="panel announcement-editor">
@@ -83,7 +83,7 @@ const AnnouncementEditor: Editor<Announcement, EditorProps<Announcement>> = (pro
                         <div className="field-body">
                             <div className="field is-expanded is-grouped is-grouped-multiline">
                                 <p className="control">
-                                    <button type="button" className="button is-primary" onClick={() => props.onEdit(announcement)}>
+                                    <button type="button" className="button is-primary" onClick={() => (controller.edit(announcement), onCancel())}>
                                         <span className="icon">
                                             <i className="fas fa-save" />
                                         </span>
@@ -91,7 +91,7 @@ const AnnouncementEditor: Editor<Announcement, EditorProps<Announcement>> = (pro
                                     </button>
                                 </p>
                                 <p className="control">
-                                    <button type="button" className="button is-info" onClick={() => props.onCancel()}>
+                                    <button type="button" className="button is-info" onClick={() => onCancel()}>
                                         <span className="icon">
                                             <i className="fas fa-ban" />
                                         </span>
@@ -99,7 +99,7 @@ const AnnouncementEditor: Editor<Announcement, EditorProps<Announcement>> = (pro
                                     </button>
                                 </p>
                                 <p className="control">
-                                    <button type="button" className="button is-danger" onClick={() => props.onDelete(announcement)}>
+                                    <button type="button" className="button is-danger" onClick={() => (controller.delete(announcement), onCancel())}>
                                         <span className="icon">
                                             <i className="fas fa-trash-alt" />
                                         </span>

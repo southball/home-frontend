@@ -4,8 +4,8 @@ import {useState} from "react";
 import {User} from "../../class/User";
 import {Editor, EditorProps} from "../../utilities/Editor";
 
-const UserEditor: Editor<User, EditorProps<User>> = (props) => {
-    const [user, userUpdate] = useState(props.selected);
+const UserEditor: Editor<User, EditorProps<User>> = ({selected, controller, onCancel, ...props}) => {
+    const [user, userUpdate] = useState(selected);
 
     return (
         <nav className="panel user-editor">
@@ -64,7 +64,7 @@ const UserEditor: Editor<User, EditorProps<User>> = (props) => {
                         <div className="field-body">
                             <div className="field is-expanded is-grouped is-grouped-multiline">
                                 <p className="control">
-                                    <button type="button" className="button is-primary" onClick={() => props.onEdit(user)}>
+                                    <button type="button" className="button is-primary" onClick={() => (controller.edit(user), onCancel())}>
                                             <span className="icon">
                                                 <i className="fas fa-save" />
                                             </span>
@@ -72,7 +72,7 @@ const UserEditor: Editor<User, EditorProps<User>> = (props) => {
                                     </button>
                                 </p>
                                 <p className="control">
-                                    <button type="button" className="button is-info" onClick={() => props.onCancel()}>
+                                    <button type="button" className="button is-info" onClick={() => onCancel()}>
                                             <span className="icon">
                                                 <i className="fas fa-ban" />
                                             </span>
@@ -80,7 +80,7 @@ const UserEditor: Editor<User, EditorProps<User>> = (props) => {
                                     </button>
                                 </p>
                                 <p className="control">
-                                    <button type="button" className="button is-danger" onClick={() => props.onDelete(user)}>
+                                    <button type="button" className="button is-danger" onClick={() => (controller.delete(user), onCancel())}>
                                             <span className="icon">
                                                 <i className="fas fa-trash-alt" />
                                             </span>

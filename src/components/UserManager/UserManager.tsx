@@ -20,7 +20,7 @@ const UserFuseOptions: Fuse.FuseOptions<User> = {
 };
 
 const UserManager: Manager<User, ManagerProps<User>> = (props) => {
-    const [entries, provider] = useProvider<User>(UserProvider, props.token);
+    const [entries, controller] = useProvider<User>(UserProvider, props.token);
     const [selected, setSelected] = useState<User | null>(null);
     const [searchQuery, setSearchQuery] = useState<string>('');
 
@@ -62,8 +62,7 @@ const UserManager: Manager<User, ManagerProps<User>> = (props) => {
                 <UserEditor
                     token={props.token}
                     selected={selected}
-                    onEdit={(user) => (provider.editEntry(user), setSelected(null))}
-                    onDelete={(user) => (provider.deleteEntry(user), setSelected(null))}
+                    controller={controller}
                     onCancel={() => setSelected(null)} />
             }
         </div>
