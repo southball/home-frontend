@@ -35,7 +35,7 @@ const UserManager: Manager<User, ManagerProps<User>> = (props) => {
                             onChange={(event) => setSearchQuery(event.target.value)} />
                     </PanelBlock>
                     <PanelBlock>
-                        <button className="button is-primary" type="button" onClick={() => provider.createEntry()}>
+                        <button className="button is-primary" type="button" onClick={() => controller.create()}>
                             <span className="icon">
                                 <i className="fas fa-user" />
                             </span>
